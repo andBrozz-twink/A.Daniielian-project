@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPIC: The Musical — Саги</title>
+    <style>
+        :root {
+            --gold: #dfb76c;
+            --dark-bronze: #231912;
+            --sea-blue: #0f2027;
+            --deep-dark: #05080a;
+            --light-text: #f0ebd8;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, var(--sea-blue), var(--deep-dark));
+            color: var(--light-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://unsplash.com') no-repeat center/cover;
+            border-bottom: 3px solid var(--gold);
+        }
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(223, 183, 108, 0.5);
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(5, 8, 10, 0.85);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(223, 183, 108, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            flex: 1;
+        }
+        h2 {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(223, 183, 108, 0.3);
+            padding-bottom: 10px;
+        }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .timeline-item {
+            background-color: rgba(35, 25, 18, 0.4);
+            border: 1px solid rgba(223, 183, 108, 0.2);
+            padding: 20px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .timeline-item:hover {
+            transform: translateX(5px);
+            border-color: var(--gold);
+        }
+        .saga-info h3 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        .saga-info p {
+            font-size: 0.95rem;
+            color: rgba(240, 235, 216, 0.8);
+            margin-bottom: 0;
+            text-align: left;
+        }
+        .status-badge {
+            background-color: rgba(223, 183, 108, 0.15);
+            color: var(--gold);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--gold);
+            white-space: nowrap;
+        }
+        footer {
+            background-color: var(--deep-dark);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            border-top: 2px solid var(--gold);
+            color: rgba(240, 235, 216, 0.6);
+            margin-top: auto;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            nav { flex-direction: column; text-align: center; }
+            nav a { padding: 10px; }
+            .timeline-item { flex-direction: column; align-items: flex-start; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>EPIC: The Musical</h1>
+        <div class="subtitle">Концептуальний мюзикл Хорхе Рівери-Ерранса</div>
+    </header>
+
+    <nav>
+        <a href="index.html">Про проект</a>
+        <a href="sagas.html" class="active">Саги</a>
+        <a href="characters.html">Персонажі</a>
+    </nav>
+
+    <div class="container">
+        <h2>Структура епосу</h2>
+        <div class="timeline">
+            <a href="sagas/saga1.html" class="timeline-item">
+                <div class="saga-info">
+                    <h3>1. The Troy Saga</h3>
+                    <p>Початок подорожі. Одіссей та його воїни святкують перемогу та готуються відплисти додому.</p>
+                </div>
+                <span class="status-badge">Детальніше</span>
+            </a>
+            <a href="sagas/saga2.html" class="timeline-item">
+                <div class="saga-info">
+                    <h3>2. The Cyclops Saga</h3>
+                    <p>Зіткнення на острові циклопів. Смертельна помилка Одіссея у битві проти Поліфема.</p>
+                </div>
+                <span class="status-badge">Детальніше</span>
+            </a>
+            <a href="sagas/saga3.html" class="timeline-item">
+                <div class="saga-info">
+                    <h3>3. The Ocean Saga</h3>
+                    <p>Зустріч з повелителем вітрів Еолом та нищівний гнів бога морів Посейдона.</p>
+                </div>
+                <span class="status-badge">Детальніше</span>
+            </a>
+            <a href="sagas/saga4.html" class="timeline-item">
+                <div class="saga-info">
+                    <h3>4. The Circe Saga</h3>
+                    <p>Магія та підступність чарівниці Цирцеї, яка перетворює людей Одіссея на тварин.</p>
+                </div>
+                <span class="status-badge">Детальніше</span>
+            </a>
+            <a href="sagas/saga5.html" class="timeline-item">
+                <div class="saga-info">
+                    <h3>5. The Underworld Saga</h3>
+                    <p>Подорож до царства мертвих, зустріч з тінню пророка Тіресія та втраченими друзями.</p>
+                </div>
+                <span class="status-badge">Детальніше</span>
+            </a>
+            <a href="sagas/saga6.html" class="timeline-item">
+                <div class="saga-info">
+                    <h3>6. The Thunder Saga</h3>
+                    <p>Зустріч із сиренами, чудовиськом Скіллою та жорстокий вибір під блискавками Зевса.</p>
+                </div>
+                <span class="status-badge">Детальніше</span>
+            </a>
+            <a href="sagas/saga7.html" class="timeline-item">
+                <div class="saga-info">
+                    <h3>7. The Wisdom Saga</h3>
+                    <p>Афіна бореться за звільнення Одіссея, який роками перебуває в полоні у німфи Каліпсо.</p>
+                </div>
+                <span class="status-badge">Детальніше</span>
+            </a>
+            <a href="sagas/saga8.html" class="timeline-item">
+                <div class="saga-info">
+                    <h3>8. The Vengeance Saga</h3>
+                    <p>Одіссей нарешті наближається до берегів Ітаки, готуючись повернути те, що належить йому.</p>
+                </div>
+                <span class="status-badge">Детальніше</span>
+            </a>
+            <a href="sagas/saga9.html" class="timeline-item">
+                <div class="saga-info">
+                    <h3>9. The Ithaca Saga</h3>
+                    <p>Фінальна битва з нахабними женихами та довгоочікуване возз'єднання з родиною.</p>
+                </div>
+                <span class="status-badge">Детальніше</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Фан-сторінка, присвячена EPIC: The Musical. Усі права на музику належать Хорхе Рівері-Еррансу.</p>
+    </footer>
+
+</body>
+</html>

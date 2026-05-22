@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPIC: The Musical — Персонажі</title>
+    <style>
+        :root {
+            --gold: #dfb76c;
+            --dark-bronze: #231912;
+            --sea-blue: #0f2027;
+            --deep-dark: #05080a;
+            --light-text: #f0ebd8;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, var(--sea-blue), var(--deep-dark));
+            color: var(--light-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://unsplash.com') no-repeat center/cover;
+            border-bottom: 3px solid var(--gold);
+        }
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(223, 183, 108, 0.5);
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(5, 8, 10, 0.85);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(223, 183, 108, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            flex: 1;
+        }
+        h2 {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(223, 183, 108, 0.3);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background-color: rgba(35, 25, 18, 0.5);
+            border: 1px solid var(--gold);
+            padding: 30px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+        }
+        .card h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .card .role {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: rgba(240, 235, 216, 0.6);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        .card p {
+            font-size: 1rem;
+            text-align: justify;
+            margin-bottom: 0;
+        }
+        footer {
+            background-color: var(--deep-dark);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            border-top: 2px solid var(--gold);
+            color: rgba(240, 235, 216, 0.6);
+            margin-top: auto;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            nav { flex-direction: column; text-align: center; }
+            nav a { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>EPIC: The Musical</h1>
+        <div class="subtitle">Концептуальний мюзикл Хорхе Рівери-Ерранса</div>
+    </header>
+
+    <nav>
+        <a href="index.html">Про проект</a>
+        <a href="sagas.html">Саги</a>
+        <a href="characters.html" class="active">Персонажі</a>
+    </nav>
+
+    <div class="container">
+        <h2>Головні дійові особи</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Одіссей</h3>
+                <div class="role">Цар Ітаки / Головний герой</div>
+                <p>Розумний, винахідливий воєначальник, який понад усе мріє повернутися до дружини Пенелопи та сина Телемаха. Протягом сюжету змушений обирати між милосердям та жорстокістю задля виживання.</p>
+            </div>
+            <div class="card">
+                <h3>Афіна</h3>
+                <div class="role">Богиня мудрості</div>
+                <p>Наставниця Одіссея, яка цінує стратегічний розрахунок. Супроводжує героя звуками фортепіано. Згодом переосмислює своє ставлення до смертних та стає на захист сина Одіссея.</p>
+            </div>
+            <div class="card">
+                <h3>Посейдон</h3>
+                <div class="role">Бог морів</div>
+                <p>Головний антагоніст першої половини мюзиклу. Приносить у треки важкий рок. Люто прагне помститися Одіссею за засліплення свого сина — циклопа Поліфема.</p>
+            </div>
+            <div class="card">
+                <h3>Еврілох</h3>
+                <div class="role">Другий командир / Друг Одіссея</div>
+                <p>Вірний товариш та родич Одіссея. Він представляє голос прагматизму і обережності серед команди, проте його рішення часто призводять до конфліктів із царем.</p>
+            </div>
+            <div class="card">
+                <h3>Цирцея</h3>
+                <div class="role">Чарівниця</div>
+                <p>Німфа острова Еея, яка володіє магією перетворення людей на звірів. Її музична тема насичена загадковими вокалізами та специфічними електронними ефектами.</p>
+            </div>
+            <div class="card">
+                <h3>Гермес</h3>
+                <div class="role">Вісник богів</div>
+                <p>Ексцентричний і швидкий бог, який допомагає Одіссею знайти протидію чарам Цирцеї. Його поява вносить у мюзикл яскравий та енергійний електро-поп стиль.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Фан-страница, присвячена EPIC: The Musical. Усі права на музику належать Хорхе Рівере-Еррансу.</p>
+    </footer>
+
+</body>
+</html>

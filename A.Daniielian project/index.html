@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPIC: The Musical — Головна</title>
+    <style>
+        :root {
+            --gold: #dfb76c;
+            --dark-bronze: #231912;
+            --sea-blue: #0f2027;
+            --deep-dark: #05080a;
+            --light-text: #f0ebd8;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, var(--sea-blue), var(--deep-dark));
+            color: var(--light-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://unsplash.com') no-repeat center/cover;
+            border-bottom: 3px solid var(--gold);
+        }
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(223, 183, 108, 0.5);
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(5, 8, 10, 0.85);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(223, 183, 108, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            flex: 1;
+        }
+        h2 {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(223, 183, 108, 0.3);
+            padding-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        .highlight-box {
+            background-color: rgba(35, 25, 18, 0.5);
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        footer {
+            background-color: var(--deep-dark);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            border-top: 2px solid var(--gold);
+            color: rgba(240, 235, 216, 0.6);
+            margin-top: auto;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            nav { flex-direction: column; text-align: center; }
+            nav a { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>EPIC: The Musical</h1>
+        <div class="subtitle">Концептуальний мюзикл Хорхе Рівери-Ерранса</div>
+    </header>
+
+    <nav>
+        <a href="index.html" class="active">Про проект</a>
+        <a href="sagas.html">Саги</a>
+        <a href="characters.html">Персонажі</a>
+    </nav>
+
+    <div class="container">
+        <h2>Про мюзикл</h2>
+        <p>EPIC — це масштабний концептуальний мюзикл, створений американським композитором та актором Хорхе Ріверою-Еррансом. В основу лібрето покладено безсмертний епос Гомера «Одіссея». Проект переосмислює класичну історію про повернення царя Ітаки додому після падіння Трої, перетворюючи її на динамічну сучасну аудіо-подорож.</p>
+        
+        <p>Головною особливістю мюзиклу є те, що він виходить не у вигляді традиційної театральної постановки, а серіями тематичних концепт-альбомів, які автор називає «сагами». Музичний стиль поєднує в собі потужні оркестрові аранжування, сучасні поп-мотиви, електронну музику та навіть елементи року.</p>
+
+        <div class="highlight-box">
+            <p style="margin: 0; font-style: italic;">«Кожному богу та міфічній істоті в мюзиклі присвоєно власний унікальний музичний інструмент або електронний ефект. Наприклад, Афіну супроводжує витончене фортепіано, Посейдона — важкі гітарні рифи, а Гермеса — швидкі синтезатори.»</p>
+        </div>
+
+        <p>Сюжет досліджує глибокі моральні питання: чи може людина залишатися доброю та милосердною у жорстокому світі, і на що здатний батько та чоловік, щоб захистити свою родину й повернутися на батьківщину. Проект здобув величезну популярність завдяки соціальним мережам та щирій підтримці фанатської спільноти по всьому світу.</p>
+    </div>
+
+    <footer>
+        <p>Фан-сторінка, присвячена EPIC: The Musical. Усі права на музику належать Хорхе Рівері-Еррансу.</p>
+    </footer>
+
+</body>
+</html>

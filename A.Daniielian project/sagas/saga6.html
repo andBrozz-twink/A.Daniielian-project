@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Thunder Saga — EPIC</title>
+    <style>
+        :root {
+            --gold: #dfb76c;
+            --sea-blue: #0f2027;
+            --deep-dark: #05080a;
+            --card-bg: rgba(35, 25, 18, 0.5);
+            --text: #f0ebd8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Georgia', serif; background: linear-gradient(to bottom, var(--sea-blue), var(--deep-dark)); color: var(--text); line-height: 1.6; min-height: 100vh; }
+        header { text-align: center; padding: 40px 20px 20px 20px; border-bottom: 3px solid var(--gold); background-color: rgba(5, 8, 10, 0.4); }
+        header h1 { font-size: 2.8rem; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 5px; text-shadow: 0 0 10px rgba(223, 183, 108, 0.3); }
+        .subtitle { font-size: 1.1rem; font-style: italic; letter-spacing: 2px; margin-bottom: 20px; color: var(--text); }
+        nav { display: flex; justify-content: center; background-color: rgba(5, 8, 10, 0.85); border-top: 1px solid rgba(223, 183, 108, 0.3); border-bottom: 1px solid rgba(223, 183, 108, 0.3); backdrop-filter: blur(5px); }
+        nav a { color: var(--text); text-decoration: none; padding: 15px 25px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        nav a:hover { color: var(--gold); }
+        main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        h2 { font-size: 2rem; color: var(--gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
+        .description { margin-bottom: 25px; font-size: 1.1rem; text-align: justify; }
+        .video-container { width: 100%; background: #000; border: 1px solid var(--gold); border-radius: 4px; margin-bottom: 25px; aspect-ratio: 16 / 9; overflow: hidden; box-shadow: 0 0 15px rgba(223, 183, 108, 0.1); }
+        video { width: 100%; height: 100%; display: block; }
+        .tracklist { list-style: none; background: var(--card-bg); border: 1px solid rgba(223, 183, 108, 0.3); border-radius: 4px; }
+        .tracklist li { padding: 15px 20px; border-bottom: 1px solid rgba(223, 183, 108, 0.15); display: flex; justify-content: space-between; cursor: pointer; transition: background 0.2s, color 0.2s; }
+        .tracklist li:hover { background: rgba(223, 183, 108, 0.1); color: var(--gold); }
+        .tracklist li.active { background: rgba(223, 183, 108, 0.2); color: var(--gold); font-weight: bold; border-left: 3px solid var(--gold); }
+        .tracklist li:last-child { border-bottom: none; }
+        .back-link { display: inline-block; margin-top: 30px; color: var(--gold); text-decoration: none; font-size: 1rem; }
+        .back-link:hover { text-decoration: underline; }
+        @media (max-width: 768px) { header h1 { font-size: 2rem; } nav { flex-direction: column; text-align: center; } nav a { padding: 10px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EPIC: The Musical</h1>
+        <div class="subtitle">Концептуальний мюзикл Хорхе Рівери-Ерранса</div>
+    </header>
+    <nav>
+        <a href="../index.html">Про проект</a>
+        <a href="../sagas.html">Саги</a>
+        <a href="../characters.html">Персонажі</a>
+    </nav>
+    <main>
+        <h2>6. The Thunder Saga</h2>
+        <p class="description">Повернувшись із царства мертвих, Одіссей стає безжальним «монстром». Він перемагає сирен та веде корабель крізь лігво Скілли, жертвуючи людьми. Зрештою, розлючений Зевс ставить героя перед страшним вибором.</p>
+        <div class="video-container">
+            <video id="sagaVideoPlayer" controls>
+                <source id="videoSource" src="../videos/saga6/track1.mp4" type="video/mp4">
+                Ваш браузер не підтримує відео.
+            </video>
+        </div>
+        <ul class="tracklist">
+            <li class="active" data-video="../videos/saga6/track1.mp4"><span>1. Suffering</span> <span>02:57</span></li>
+            <li data-video="../videos/saga6/track2.mp4"><span>2. Different Beast</span> <span>03:00</span></li>
+            <li data-video="../videos/saga6/track3.mp4"><span>3. Scylla</span> <span>03:13</span></li>
+            <li data-video="../videos/saga6/track4.mp4"><span>4. Mutiny</span> <span>04:14</span></li>
+            <li data-video="../videos/saga6/track5.mp4"><span>5. Thunder Bringer</span> <span>03:42</span></li>
+        </ul>
+        <a href="../sagas.html" class="back-link">&larr; Назад до списку саг</a>
+    </main>
+    <script>
+        const player = document.getElementById('sagaVideoPlayer');
+        const source = document.getElementById('videoSource');
+        const tracks = Array.from(document.querySelectorAll('.tracklist li'));
+        function playTrack(trackElement) {
+            tracks.forEach(t => t.classList.remove('active'));
+            trackElement.classList.add('active');
+            const videoUrl = trackElement.getAttribute('data-video');
+            player.pause();
+            source.setAttribute('src', videoUrl);
+            player.load();
+            player.play();
+        }
+        tracks.forEach(track => { track.addEventListener('click', function() { playTrack(this); }); });
+        player.addEventListener('ended', function() {
+            const currentActive = document.querySelector('.tracklist li.active');
+            const currentIndex = tracks.indexOf(currentActive);
+            if (currentIndex !== -1 && currentIndex < tracks.length - 1) { playTrack(tracks[currentIndex + 1]); }
+        });
+    </script>
+</body>
+</html>
